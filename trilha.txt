@@ -1,4 +1,3 @@
-destructuring, spread/rest operators.
     - Node.js:
         - O que é Node.js? Event Loop e V8.
         - Criando seu primeiro script em Node.js.
