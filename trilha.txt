@@ -1,0 +1,190 @@
+destructuring, spread/rest operators.
+    - Node.js:
+        - O que é Node.js? Event Loop e V8.
+        - Criando seu primeiro script em Node.js.
+        - Módulos nativos (`fs`, `path`, `http`, etc.).
+        - Gerenciamento de pacotes com `npm` e `yarn`.
+    - **Atividade prática**:
+        - Criar um pequeno servidor HTTP usando `http`.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### **2. Trabalhando com APIs e Banco de Dados**
+
+- **Objetivo**: Aprender a criar APIs RESTful e integrar com bancos de dados.
+- **Conteúdo**:
+    - APIs RESTful:
+        - HTTP Methods (GET, POST, PUT, DELETE).
+        - Status Codes e boas práticas em endpoints.
+        - Ferramentas como Postman ou Insomnia.
+    - Framework Express.js:
+        - Estrutura básica de uma aplicação Express.
+        - Middleware: Implementação e uso de bibliotecas externas (e.g., `body-parser`, `cors`).
+    - Banco de Dados:
+        - SQL: Introdução ao MySQL ou PostgreSQL.
+        - ORMs: Sequelize ou Prisma.
+        - Conexão e criação de rotas CRUD.
+    - **Atividade prática**:
+        - Criar uma API CRUD para gerenciar usuários em um banco SQL.
+
+---
+
+### **3. Arquitetura MVC**
+
+- **Objetivo**: Estruturar a aplicação seguindo o padrão Model-View-Controller.
+- **Conteúdo**:
+    - Entendendo o padrão MVC:
+        - O papel de cada camada (Model, View, Controller).
+    - Implementação prática:
+        - Refatorando a API CRUD para seguir o padrão MVC.
+    - **Atividade prática**:
+        - Criar uma aplicação básica de gerenciamento de tarefas (To-Do List) usando MVC.
+
+---
+
+### **4. Introdução ao DDD (Domain-Driven Design)**
+
+- **Objetivo**: Dividir responsabilidades com foco no domínio da aplicação.
+- **Conteúdo**:
+    - O que é DDD?
+        - Principais conceitos: Entidades, Value Objects, Aggregates, Repositories, e Services.
+        - Boundaries e Contextos Limitados.
+    - Aplicação prática:
+        - Refatorar a To-Do List para implementar um modelo de domínio usando DDD.
+    - **Atividade prática**:
+        - Criar um sistema de gerenciamento de contas bancárias, utilizando DDD para modelar o domínio.
+
+---
+
+### **5. Clean Architecture**
+
+- **Objetivo**: Organizar e escalar a aplicação com independência de frameworks e bancos de dados.
+- **Conteúdo**:
+    - O que é Clean Architecture?
+        - Princípios: Separação de camadas (Domínio, Aplicação, Infraestrutura).
+        - Dependency Inversion Principle (DIP).
+    - Refatorando o projeto DDD:
+        - Criar camadas distintas para aplicação.
+        - Implementar interfaces para desacoplar a lógica de negócios.
+    - **Atividade prática**:
+        - Criar um sistema de e-commerce com Clean Architecture.
+
+---
+
+### **6. Deploy e Performance**
+
+- **Objetivo**: Preparar e escalar o sistema para produção.
+- **Conteúdo**:
+    - Deploy:
+        - Configuração de ambientes com Docker.
+        - Deploy no Heroku, AWS, ou DigitalOcean.
+    - Performance:
+        - Cache com Redis.
+        - Gerenciamento de logs (Winston).
+    - **Atividade prática**:
+        - Dockerizar o sistema de e-commerce e realizar o deploy.
+
+---
+
+---
+
+### Trilha Backend com NestJS: Do Básico ao Avançado
+
+### **1. Fundamentos do NestJS**
+
+- **Objetivo**: Entender os princípios básicos e a estrutura do NestJS.
+- **Conteúdo**:
+    - O que é NestJS?
+        - Diferenças entre NestJS e Express.js.
+        - Inversão de Controle (IoC) e Injeção de Dependência (DI).
+    - Estrutura de um projeto:
+        - Módulos, Controladores e Serviços.
+    - CLI do NestJS:
+        - Criando projetos e gerando módulos/recursos.
+    - **Atividade prática**:
+        - Criar um projeto básico com rotas para gerenciar usuários.
+
+---
+
+### **2. Trabalhando com Banco de Dados**
+
+- **Objetivo**: Persistir dados utilizando bibliotecas e ORMs.
+- **Conteúdo**:
+    - Banco de dados com NestJS:
+        - Configuração de conexões com TypeORM ou Prisma.
+        - Criando entidades e relacionamentos.
+    - Repositories e Services:
+        - Separação de responsabilidades e boas práticas.
+    - **Atividade prática**:
+        - Criar uma API CRUD para gerenciamento de produtos em um banco relacional.
+
+---
+
+### **3. Middleware, Guards e Interceptors**
+
+- **Objetivo**: Criar funcionalidades avançadas de backend.
+- **Conteúdo**:
+    - Middleware:
+        - Implementação e uso para manipulação de requests.
+    - Guards:
+        - Implementando autenticação e autorização.
+    - Interceptors:
+        - Manipulação de responses e tratamento de erros.
+    - **Atividade prática**:
+        - Criar um sistema de autenticação JWT com proteção de rotas usando Guards.
+
+---
+
+### **4. Arquitetura Avançada: Domain-Driven Design e Clean Architecture**
+
+- **Objetivo**: Criar sistemas robustos e escaláveis com boas práticas.
+- **Conteúdo**:
+    - Revisitando DDD:
+        - Implementação prática com NestJS.
+    - Clean Architecture:
+        - Organização das camadas (Domínio, Aplicação, Infraestrutura).
+    - **Atividade prática**:
+        - Criar um sistema de agendamento de consultas médicas seguindo Clean Architecture com DDD.
+
+---
+
+### **5. Microsserviços com NestJS**
+
+- **Objetivo**: Dividir sistemas monolíticos em microsserviços independentes.
+- **Conteúdo**:
+    - Introdução a Microsserviços:
+        - Quando e por que usar?
+        - Comunicação entre microsserviços (RPC, eventos).
+    - Implementação com NestJS:
+        - Criando microsserviços usando RabbitMQ e Kafka.
+        - Gerenciando filas e mensagens.
+    - **Atividade prática**:
+        - Criar um sistema de notificações baseado em microsserviços.
+
+---
+
+### **6. Deploy e Gerenciamento de Projetos**
+
+- **Objetivo**: Preparar sistemas NestJS para produção.
+- **Conteúdo**:
+    - Deploy:
+        - Deploy em ambientes Docker.
+        - Configuração de CI/CD com GitHub Actions.
+    - Performance:
+        - Cache com Redis.
+        - Monitoramento com ferramentas como Prometheus e Grafana.
+    - **Atividade prática**:
+        - Dockerizar um microsserviço e realizar o deploy em Kubernetes.
