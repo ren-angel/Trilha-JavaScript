@@ -1,10 +1,5 @@
-    - Node.js:
-        - O que é Node.js? Event Loop e V8.
-        - Criando seu primeiro script em Node.js.
-        - Módulos nativos (`fs`, `path`, `http`, etc.).
+
         - Gerenciamento de pacotes com `npm` e `yarn`.
-    - **Atividade prática**:
-        - Criar um pequeno servidor HTTP usando `http`.
 
 ---
 
