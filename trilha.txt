@@ -1,28 +1,3 @@
-
-        - Gerenciamento de pacotes com `npm` e `yarn`.
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### **2. Trabalhando com APIs e Banco de Dados**
-
-- **Objetivo**: Aprender a criar APIs RESTful e integrar com bancos de dados.
-- **Conteúdo**:
-    - APIs RESTful:
-        - HTTP Methods (GET, POST, PUT, DELETE).
-        - Status Codes e boas práticas em endpoints.
         - Ferramentas como Postman ou Insomnia.
     - Framework Express.js:
         - Estrutura básica de uma aplicação Express.
@@ -35,6 +10,14 @@
         - Criar uma API CRUD para gerenciar usuários em um banco SQL.
 
 ---
+
+
+
+
+
+
+
+
 
 ### **3. Arquitetura MVC**
 
@@ -78,7 +61,7 @@
 
 ---
 
-### **6. Deploy e Performance**
+### **6. Deploy e Performance** -> fazer pratica em outro repo
 
 - **Objetivo**: Preparar e escalar o sistema para produção.
 - **Conteúdo**:
@@ -95,7 +78,7 @@
 
 ---
 
-### Trilha Backend com NestJS: Do Básico ao Avançado
+### Trilha Backend com NestJS: Do Básico ao Avançado -> fazer outro repo, um repo pra cada prática
 
 ### **1. Fundamentos do NestJS**
 
