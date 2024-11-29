@@ -1,9 +1,4 @@
-        - Ferramentas como Postman ou Insomnia.
-    - Framework Express.js:
-        - Estrutura básica de uma aplicação Express.
-        - Middleware: Implementação e uso de bibliotecas externas (e.g., `body-parser`, `cors`).
-    - Banco de Dados:
-        - SQL: Introdução ao MySQL ou PostgreSQL.
+
         - ORMs: Sequelize ou Prisma.
         - Conexão e criação de rotas CRUD.
     - **Atividade prática**:

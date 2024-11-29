@@ -36,15 +36,10 @@ O gerenciamento de pacotes com **npm** (Node Package Manager) e **Yarn** é fund
    ```bash
    corepack enable
    ```
-
-   ```bash
-   yarn init -2
-   ```
-
-   - **`-2`** se refere a atualização do Yarn 2, conhecida como Berry.
+   -- **OBS**: Necessita de abrir o CMD como `Administrador`
 
 3. **Comandos principais:**
-   - **`yarn init -2`**: Cria o `package.json`.
+   - **`yarn init -2`**: Cria o `package.json`. **`-2`** se refere a atualização do Yarn 2, conhecida como Berry.
    - **`yarn add <pacote>`**: Instala um pacote e o adiciona ao `package.json`.
      - Exemplo: `yarn add react`.
    - **`yarn install`**: Instala todas as dependências.
