@@ -21,10 +21,10 @@ import usuario from './models/usuario.js';
         console.log('Lista de usuários:', usuarios.map(usuario => usuario.toJSON()));
 
         // Atualizar um usuário
-        await usuario.update({ nome: 'João Souza' }, {
+        const usuarioAtualizado = await usuario.update({ nome: 'João Souza' }, {
             where: { usuario_id: novoUsuario.usuario_id },
         });
-        console.log('Usuário atualizado');
+        console.log('Usuário atualizado', usuarioAtualizado.toJSON());
 
         // Excluir um usuário
         await usuario.destroy({

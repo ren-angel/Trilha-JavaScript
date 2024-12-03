@@ -1,7 +1,3 @@
-
-        - ORMs: Sequelize ou Prisma.
-        - Conexão e criação de rotas CRUD.
-    - **Atividade prática**:
         - Criar uma API CRUD para gerenciar usuários em um banco SQL.
 
 ---
