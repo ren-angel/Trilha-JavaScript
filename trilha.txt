@@ -1,23 +1,4 @@
-        - Criar uma API CRUD para gerenciar usuários em um banco SQL.
 
----
-
-
-
-
-
-
-
-
-
-### **3. Arquitetura MVC**
-
-- **Objetivo**: Estruturar a aplicação seguindo o padrão Model-View-Controller.
-- **Conteúdo**:
-    - Entendendo o padrão MVC:
-        - O papel de cada camada (Model, View, Controller).
-    - Implementação prática:
-        - Refatorando a API CRUD para seguir o padrão MVC.
     - **Atividade prática**:
         - Criar uma aplicação básica de gerenciamento de tarefas (To-Do List) usando MVC.
 

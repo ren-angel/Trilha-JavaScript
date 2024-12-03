@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuário</title>
+</head>
+<body>
+  <h1>Bem-vindo, <%= user.name %>!</h1>
+  <p>Descrição: <%= user.description %></p>
+  <p>Data criado: <%= user.createdAt %></p>
+
+  <a href="/update/<%= user.user_id %>">Atualizar Usuário</a>
+  <a href="/delete/<%= user.user_id %>">Remover Usuário</a>
+</body>
+</html>

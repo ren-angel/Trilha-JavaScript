@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuários</title>
+</head>
+<body>
+    <h1>Usuários</h1>
+    <ul>
+        <% users.forEach(user => { %>
+            <li><a href="/get/<%= user.user_id %>"><%= user.name %></a></li>
+        <% }); %>
+    </ul>
+    <a href="/create">Adicionar Usuário</a>
+</body>
+</html>
