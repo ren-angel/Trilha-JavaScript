@@ -1,18 +1,6 @@
 
-    - **Atividade prática**:
-        - Criar uma aplicação básica de gerenciamento de tarefas (To-Do List) usando MVC.
-
----
-
-### **4. Introdução ao DDD (Domain-Driven Design)**
-
-- **Objetivo**: Dividir responsabilidades com foco no domínio da aplicação.
-- **Conteúdo**:
-    - O que é DDD?
         - Principais conceitos: Entidades, Value Objects, Aggregates, Repositories, e Services.
         - Boundaries e Contextos Limitados.
-    - Aplicação prática:
-        - Refatorar a To-Do List para implementar um modelo de domínio usando DDD.
     - **Atividade prática**:
         - Criar um sistema de gerenciamento de contas bancárias, utilizando DDD para modelar o domínio.
 
