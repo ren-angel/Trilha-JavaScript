@@ -68,14 +68,54 @@ No caso de um e-commerce, o cálculo de frete pode ser um Domain Service, pois e
 
 ---
 
-### **Exemplo Integrado: Sistema de E-commerce**
+### **6. Application Services**
+**O que são:**  
+Application Services coordenam as interações entre os componentes do sistema (Entidades, Value Objects, Aggregates, Domain Services e Repositories) e são responsáveis por atender às necessidades das interfaces externas (APIs, UI, CLI). Eles atuam como uma camada de orquestração e não devem conter lógica de negócio.
+
+**Exemplo:**  
+Um serviço `FinalizarPedidoService` pode validar o pedido, calcular o frete e acionar o repositório para salvar o pedido.
+
+**Características:**  
+- Delegam lógica de negócio para o domínio (Entidades, Aggregates e Domain Services).  
+- Focam em **coordenação de operações**.  
+- Expõem funcionalidades de forma **transparente e clara** para consumidores externos.  
+
+---
+
+### **7. Infrastructure Services**
+**O que são:**  
+Infrastructure Services tratam das preocupações técnicas, como persistência de dados, envio de e-mails, comunicação com APIs externas e integração com sistemas de terceiros. Eles oferecem implementações para abstrações usadas pelo domínio.
+
+**Exemplo:**  
+Um serviço `EmailSenderService` pode encapsular a lógica de envio de e-mails via SMTP ou um serviço terceirizado, como SendGrid.
+
+**Características:**  
+- São dependências técnicas usadas pelo domínio ou aplicação.  
+- Focam em **interações externas**.  
+- Devem ser acessados indiretamente pelo domínio, geralmente via interfaces.
+
+---
+
+### **Exemplo Integrado Atualizado: Sistema de E-commerce**
+
 1. **Entidade**:  
-   - `Pedido` com ID único.
+   - `Pedido` com ID único, representando uma compra feita por um cliente.
+
 2. **Value Object**:  
-   - `Endereço` associado ao pedido.
+   - `Endereço`, usado para definir o local de entrega do pedido.
+
 3. **Aggregate**:  
-   - `Pedido`, que controla os `Itens do Pedido`.
+   - `Pedido` como a Aggregate Root, contendo `Itens do Pedido` e validando regras, como não permitir quantidade negativa de itens.
+
 4. **Repository**:  
-   - `PedidoRepository` para salvar e buscar pedidos.
+   - `PedidoRepository`, responsável por salvar e recuperar pedidos no banco de dados.
+
 5. **Domain Service**:  
-   - `CalculadorFreteService` para determinar o custo de entrega.
+   - `CalculadorFreteService`, que determina o custo de entrega com base no endereço do cliente.
+
+6. **Application Service**:  
+   - `FinalizarPedidoService`, que coordena operações como validação do pedido, cálculo do frete e persistência no repositório.
+
+7. **Infrastructure Service**:  
+   - `EmailSenderService`, para enviar e-mails de confirmação ao cliente após o pedido ser finalizado.  
+   - `PagamentoService`, para integrar com APIs de pagamento, como Stripe ou PayPal.
