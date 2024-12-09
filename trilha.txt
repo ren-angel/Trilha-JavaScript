@@ -1,6 +1,4 @@
 
-        - Principais conceitos: Entidades, Value Objects, Aggregates, Repositories, e Services.
-        - Boundaries e Contextos Limitados.
     - **Atividade prática**:
         - Criar um sistema de gerenciamento de contas bancárias, utilizando DDD para modelar o domínio.
 
