@@ -1,20 +1,5 @@
 
     - **Atividade prática**:
-        - Criar um sistema de gerenciamento de contas bancárias, utilizando DDD para modelar o domínio.
-
----
-
-### **5. Clean Architecture**
-
-- **Objetivo**: Organizar e escalar a aplicação com independência de frameworks e bancos de dados.
-- **Conteúdo**:
-    - O que é Clean Architecture?
-        - Princípios: Separação de camadas (Domínio, Aplicação, Infraestrutura).
-        - Dependency Inversion Principle (DIP).
-    - Refatorando o projeto DDD:
-        - Criar camadas distintas para aplicação.
-        - Implementar interfaces para desacoplar a lógica de negócios.
-    - **Atividade prática**:
         - Criar um sistema de e-commerce com Clean Architecture.
 
 ---
