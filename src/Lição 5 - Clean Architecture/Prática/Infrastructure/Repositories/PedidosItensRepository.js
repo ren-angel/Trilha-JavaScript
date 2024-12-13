@@ -2,15 +2,17 @@ import PedidosItens from "../../Domain/Entities/PedidosItens";
 import PedidosItensModel from "../Models/PedidosItensModel";
 
 class PedidosItensRepository {
+
   async criar(pedidoID, item) {
+
     await PedidosItensModel.create({
       pedido_id: pedidoID,
       produto_id: item.obterProduto().produto_id,
-      preco: item.obterProduto().obterPreco(),
     });
   }
 
   async obterPorPedidoID(pedidoID) {
+
     const resultados = await PedidosItensModel.findAll({
       where: { pedido_id: pedidoID },
     });
@@ -29,19 +31,8 @@ class PedidosItensRepository {
     );
   }
 
-  async atualizar(pedidoID, item) {
-    await PedidosItensModel.update(
-      { preco: item.obterProduto().obterPreco() },
-      {
-        where: {
-          pedido_id: pedidoID,
-          produto_id: item.obterProduto().produto_id,
-        },
-      }
-    );
-  }
-
   async removerPorPedidoID(pedidoID) {
+    
     await PedidosItensModel.destroy({ where: { pedido_id: pedidoID } });
   }
 }

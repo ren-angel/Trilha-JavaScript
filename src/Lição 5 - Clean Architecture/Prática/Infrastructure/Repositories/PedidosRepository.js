@@ -3,13 +3,15 @@ import PedidosModel from "../Models/PedidosModel";
 import PedidosItensRepository from "./PedidosItensRepository";
 
 class PedidosRepository {
+
   constructor() {
+
     this.pedidosItensRepo = new PedidosItensRepository();
   }
 
   async criar(pedido) {
+
     const novoPedido = await PedidosModel.create({
-      pedido_id: pedido.pedido_id,
       total: pedido.calcularTotal(),
     });
 
@@ -21,6 +23,7 @@ class PedidosRepository {
   }
 
   async obterPorID(pedidoID) {
+
     const resultado = await PedidosModel.findByPk(pedidoID, {
       include: ["itens"],
     });
@@ -33,6 +36,7 @@ class PedidosRepository {
   }
 
   async obterTodos() {
+
     const resultados = await PedidosModel.findAll({ include: ["itens"] });
 
     if (!resultados || resultados.length === 0) return [];
@@ -47,18 +51,17 @@ class PedidosRepository {
   }
 
   async atualizar(pedido) {
+    
     await PedidosModel.update(
       { total: pedido.calcularTotal() },
       { where: { pedido_id: pedido.pedido_id } }
     );
-
-    for (const item of pedido.obterItens()) {
-      await this.pedidosItensRepo.atualizar(pedido.pedido_id, item);
-    }
   }
 
   async remover(pedidoID) {
+
     await this.pedidosItensRepo.removerPorPedidoID(pedidoID);
+    
     await PedidosModel.destroy({ where: { pedido_id: pedidoID } });
   }
 }

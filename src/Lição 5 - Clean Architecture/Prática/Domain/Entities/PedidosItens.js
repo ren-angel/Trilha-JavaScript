@@ -1,7 +1,8 @@
 class PedidosItens {
 
-    constructor(produto) {
+    constructor(pedido, produto) {
 
+      this.pedido = pedido;
       this.produto = produto;
     }
   
