@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos</title>
+</head>
+<body>
+  <p>Nome: <%= produto.nome %></p>
+  <p>Preco: <%= produto.preco %></p>
+
+  <a href="/produtos/atualizar/<%= produto.produtoID %>">Atualizar Produto</a>
+  <a href="/produtos/remover/<%= produto.produtoID %>">Remover Produto</a>
+</body>
+</html>

@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-const sequelize = new Sequelize('ecommerce', 'root', 'admin', {
+const sequelize = new Sequelize('ecommerce', 'root', 'root', {
   dialect: 'mysql',
   host: 'localhost',
 });

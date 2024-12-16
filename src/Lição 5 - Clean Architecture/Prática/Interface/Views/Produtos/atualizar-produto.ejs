@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Produto</title>
+</head>
+<body>
+    <h1>Atualizar Produto</h1>
+    <form action="/produtos/atualizar/<%= produtoID %>" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="text" name="nome" placeholder="Nome">
+        <input type="text" name="preco" placeholder="Preço">
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>

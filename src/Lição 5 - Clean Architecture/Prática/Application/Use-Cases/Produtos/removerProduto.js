@@ -1,4 +1,4 @@
-class RemoverProdutos {
+class RemoverProduto {
 
   constructor(produtoRepository) {
 
@@ -16,4 +16,4 @@ class RemoverProdutos {
   }
 }
 
-export default RemoverProdutos;
+export default RemoverProduto;

@@ -1,6 +1,8 @@
-import Pedidos from "../../Domain/Entities/Pedidos";
-import PedidosModel from "../Models/PedidosModel";
-import PedidosItensRepository from "./PedidosItensRepository";
+import sequelize from "../database/db.js";
+import Pedidos from "../../Domain/Entities/Pedidos.js";
+import PedidosModel from "../Models/PedidosModel.js";
+import ProdutosModel from "../Models/ProdutosModel.js";
+import PedidosItensRepository from "./PedidosItensRepository.js";
 
 class PedidosRepository {
 
@@ -11,50 +13,68 @@ class PedidosRepository {
 
   async criar(pedido) {
 
-    const novoPedido = await PedidosModel.create({
-      total: pedido.calcularTotal(),
-    });
+    const transacao = await sequelize.transaction();
 
-    for (const item of pedido.obterItens()) {
-      await this.pedidosItensRepo.criar(novoPedido.pedido_id, item);
+    try {
+
+      const novoPedido = await PedidosModel.create(
+        { total: pedido.calcularTotal() },
+        { transacao }
+      );
+  
+      for (const item of pedido.obterItens()) {
+
+        await this.pedidosItensRepo.criar(novoPedido.pedido_id, item, transacao);
+      }
+  
+      await transacao.commit();
+      return novoPedido;
+    } catch (error) {
+
+      await transacao.rollback();
     }
-
-    return novoPedido;
   }
 
   async obterPorID(pedidoID) {
 
     const resultado = await PedidosModel.findByPk(pedidoID, {
-      include: ["itens"],
+      include: {
+        model: ProdutosModel,
+        as: 'itens',
+        through: { attributes: [] },
+      },
     });
 
     if (!resultado) return null;
-
-    const itens = await this.pedidosItensRepo.obterPorPedidoID(pedidoID);
+  
+    const itens = resultado.itens.map(
+      (produto) => new PedidosItens(pedidoID, produto)
+    );
 
     return new Pedidos(resultado.pedido_id, itens, resultado.total);
-  }
+  }  
 
   async obterTodos() {
 
-    const resultados = await PedidosModel.findAll({ include: ["itens"] });
-
+    const resultados = await PedidosModel.findAll({
+      include: {
+        model: ProdutosModel,
+        as: 'itens',
+        through: { attributes: [] },
+      },
+    });
+  
     if (!resultados || resultados.length === 0) return [];
-
-    return resultados.map((resultado) =>
-      new Pedidos(
-        resultado.pedido_id,
-        this.pedidosItensRepo.obterPorPedidoID(resultado.pedido_id),
-        resultado.total
-      )
-    );
-  }
-
-  async atualizar(pedido) {
-    
-    await PedidosModel.update(
-      { total: pedido.calcularTotal() },
-      { where: { pedido_id: pedido.pedido_id } }
+  
+    return resultados.map(
+      (resultado) =>
+        new Pedidos(
+          resultado.pedido_id,
+          resultado.itens.map(
+            (produto) => new PedidosItens(resultado.pedido_id, produto)
+          ),
+          resultado.total
+        )
     );
   }
 

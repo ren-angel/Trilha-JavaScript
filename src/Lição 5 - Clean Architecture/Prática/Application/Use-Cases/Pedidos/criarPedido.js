@@ -1,19 +1,20 @@
-import Pedidos from "../../../Domain/Entities/Pedidos";
+import Pedidos from "../../../Domain/Entities/Pedidos.js";
 
-class CriarPedidos {
+class CriarPedido {
 
   constructor(pedidosRepository) {
 
     this.pedidosRepository = pedidosRepository;
   }
 
-  async executar(nome, preco) {/
+  async executar(itens) {
 
-    const pedidos = new Pedidos(null, nome, preco);
-    await this.pedidosRepository.criar(pedidos);
+    const pedido = new Pedidos(null, itens || []);
+    pedido.total = pedido.calcularTotal();
 
-    return pedidos;
+    const novoPedido = await this.pedidosRepository.criar(pedido);
+    return novoPedido;
   }
 }
 
-export default CriarPedidos;
+export default CriarPedido;

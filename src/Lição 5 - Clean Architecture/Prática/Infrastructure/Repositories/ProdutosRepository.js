@@ -1,5 +1,5 @@
-import Produtos from "../../Domain/Entities/Produtos";
-import ProdutosModel from "../Models/ProdutosModel";
+import Produtos from "../../Domain/Entities/Produtos.js";
+import ProdutosModel from "../Models/ProdutosModel.js";
 
 class ProdutosRepository {
 
@@ -33,14 +33,14 @@ class ProdutosRepository {
 
     await ProdutosModel.update(
       { nome: produto.obterNome(), preco: produto.obterPreco() },
-      { where: { produto_id: produto.produto_id } }
+      { where: { produto_id: produto.produtoID } }
     );
   }
 
   async remover(produto) {
 
     await ProdutosModel.destroy({
-        where: { produto_id: produto.produto_id },
+        where: { produto_id: produto.produtoID },
     });
   }
 }

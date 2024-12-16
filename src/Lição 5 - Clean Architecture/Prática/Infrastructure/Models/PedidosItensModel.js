@@ -15,12 +15,14 @@ PedidosModel.belongsToMany(ProdutosModel, {
   through: PedidosItensModel,
   foreignKey: 'pedido_id',
   otherKey: 'produto_id',
+  as: 'itens',
 });
 
 ProdutosModel.belongsToMany(PedidosModel, {
   through: PedidosItensModel,
   foreignKey: 'produto_id',
   otherKey: 'pedido_id',
+  as: 'pedidos',
 });
 
 export default PedidosItensModel;

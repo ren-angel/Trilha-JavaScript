@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <form action="/pedidos/criar" method="post">
+        <ul>
+            <% produtos.forEach(produto => { %>
+                <li>
+                    <input type="checkbox" name="itens[]" value="<%= produto.produtoID %>">
+                    <a href="/produtos/<%= produto.produtoID %>"><%= produto.nome %></a>
+                    <p>R$ <%= produto.preco %></p>
+                </li>
+            <% }); %>
+        </ul>
+        <button type="submit">Fazer Pedido</button>
+    </form>
+    
+    <a href="/produtos/criar">Adicionar Produto</a>
+    <a href="/pedidos/">Ver Pedidos</a>
+</body>
+</html>

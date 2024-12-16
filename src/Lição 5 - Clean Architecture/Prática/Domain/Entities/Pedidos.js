@@ -7,12 +7,6 @@ class Pedidos {
     this.total = total;
   }
 
-  // adicionarItem(produto) {
-
-  //   const item = new PedidosItens(produto);
-  //   this.itens.push(item);
-  // }
-
   obterItens() {
 
     return this.itens;

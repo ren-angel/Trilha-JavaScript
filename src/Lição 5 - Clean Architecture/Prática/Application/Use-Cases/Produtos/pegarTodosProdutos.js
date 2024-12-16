@@ -1,4 +1,4 @@
-class PegarTodosProduto {
+class PegarTodosProdutos {
 
   constructor(produtoRepository) {
 
@@ -13,4 +13,4 @@ class PegarTodosProduto {
   }
 }
 
-export default PegarTodosProduto;
+export default PegarTodosProdutos;
