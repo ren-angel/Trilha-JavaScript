@@ -10,7 +10,7 @@ class RemoverPedido {
     const pedidoExistente = await this.pedidoRepository.obterPorID(pedidoID);
     if (!pedidoExistente) throw new Error("pedido não encontrada.");
 
-    await this.pedidoRepository.remover(pedidoExistente);
+    await this.pedidoRepository.remover(pedidoExistente.pedido_id);
 
     return true;
   }

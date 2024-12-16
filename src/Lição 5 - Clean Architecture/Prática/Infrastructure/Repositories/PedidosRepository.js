@@ -1,5 +1,6 @@
 import sequelize from "../database/db.js";
 import Pedidos from "../../Domain/Entities/Pedidos.js";
+import PedidosItens from "../../Domain/Entities/PedidosItens.js";
 import PedidosModel from "../Models/PedidosModel.js";
 import ProdutosModel from "../Models/ProdutosModel.js";
 import PedidosItensRepository from "./PedidosItensRepository.js";
@@ -12,13 +13,12 @@ class PedidosRepository {
   }
 
   async criar(pedido) {
-
     const transacao = await sequelize.transaction();
 
     try {
 
       const novoPedido = await PedidosModel.create(
-        { total: pedido.calcularTotal() },
+        { total: pedido.obterTotal() },
         { transacao }
       );
   

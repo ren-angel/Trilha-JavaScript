@@ -4,7 +4,7 @@ class PegarProduto {
 
     this.produtoRepository = produtoRepository;
   }
-
+  
   async executar(produtoID) {
 
     const produto = await this.produtoRepository.obterPorID(produtoID);

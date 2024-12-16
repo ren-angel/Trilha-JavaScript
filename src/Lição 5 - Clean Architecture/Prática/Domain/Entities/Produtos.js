@@ -16,11 +16,6 @@ class Produtos {
 
       return this.preco;
     }
-
-    obterQuantidade() {
-
-      return this.quantidade;
-    }
   }
   
 export default Produtos;

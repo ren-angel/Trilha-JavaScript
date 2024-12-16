@@ -6,9 +6,17 @@
 </head>
 <body>
   <p>ID: <%= pedido.pedido_id %></p>
-  <p>Itens: <%= pedido.itens %></p>
+  
+  <p>Itens:
+    <ul>
+      <% pedido.itens.forEach(item => { %>
+        <li><%= item.produto.nome %></li>
+      <% }); %>
+    </ul>
+  </p>
+  
   <p>Total: <%= pedido.total %></p>
 
-  <a href="/pedidos/remover/<%= pedido.pedidoID %>">Remover pedido</a>
+  <a href="/pedidos/remover/<%= pedido.pedido_id %>">Remover pedido</a>
 </body>
 </html>

@@ -7,21 +7,21 @@ class AtualizarProduto {
     this.produtoRepository = produtoRepository;
   }
 
-  async executar(produtoID, nome, preco) {
+  async executar(produtoInfo) {
 
-    const produtoExistente = await this.produtoRepository.obterPorID(produtoID);
+    const produtoExistente = await this.produtoRepository.obterPorID(produtoInfo.produtoID);
     if (!produtoExistente) throw new Error("produto não encontrado.");
 
-    const produto = new Produtos(produtoID, produtoExistente.nome, produtoExistente.preco);
+    const produto = new Produtos(produtoInfo.produtoID, produtoExistente.nome, produtoExistente.preco);
 
-    if (nome) {
+    if (produtoInfo.nome) {
 
-      produto.nome = nome;
+      produto.nome = produtoInfo.nome;
     }
 
-    if (preco) {
+    if (produtoInfo.preco) {
 
-      produto.preco = preco;
+      produto.preco = produtoInfo.preco;
     }
 
     await this.produtoRepository.atualizar(produto);

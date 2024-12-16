@@ -64,7 +64,7 @@ const atualizarProduto = async (req, res) => {
   
     try {
   
-      const produto = await atualizarProdutoApp.executar({ produtoID, nome, preco });
+      await atualizarProdutoApp.executar({ produtoID, nome, preco });
   
       return res.redirect("/produtos");
     } catch (error) {

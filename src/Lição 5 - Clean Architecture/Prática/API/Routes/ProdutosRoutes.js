@@ -5,8 +5,6 @@ const produtosRouter = express.Router();
 
 produtosRouter.get('/', ProdutosController.pegarTodosProdutos);
 
-produtosRouter.get('/:produtoID', ProdutosController.pegarProduto);
-
 produtosRouter.get('/criar', (req, res) => res.render('criar-produto'));
 produtosRouter.post('/criar', ProdutosController.criarProduto);
 
@@ -15,5 +13,7 @@ produtosRouter.put('/atualizar/:produtoID', ProdutosController.atualizarProduto)
 
 produtosRouter.get('/remover/:produtoID', (req, res) => res.render('remover-produto', { produtoID: req.params.produtoID }));
 produtosRouter.delete('/remover/:produtoID', ProdutosController.removerproduto);
+
+produtosRouter.get('/:produtoID', ProdutosController.pegarProduto);
 
 export default produtosRouter;

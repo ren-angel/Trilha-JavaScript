@@ -10,8 +10,8 @@
         <ul>
             <% produtos.forEach(produto => { %>
                 <li>
-                    <input type="checkbox" name="itens[]" value="<%= produto.produtoID %>">
-                    <a href="/produtos/<%= produto.produtoID %>"><%= produto.nome %></a>
+                    <input type="checkbox" name="itens" value="<%= produto.produto_id %>">
+                    <a href="/produtos/<%= produto.produto_id %>"><%= produto.nome %></a>
                     <p>R$ <%= produto.preco %></p>
                 </li>
             <% }); %>

@@ -12,10 +12,21 @@ class Pedidos {
     return this.itens;
   }
 
+  obterTotal() {
+
+    return this.total;
+  }
+
   calcularTotal() {
 
-    return this.itens.reduce((total, item) => total + item.calcularSubtotal(), 0);
-  }
+    if (Array.isArray(this.itens)) {
+
+      return this.itens.reduce((total, item) => total + item.preco, 0);
+    } else {
+
+      return this.itens.preco;
+    }
+  }  
 }
 
 export default Pedidos;

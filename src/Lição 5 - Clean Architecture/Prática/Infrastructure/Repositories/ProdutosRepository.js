@@ -6,7 +6,7 @@ class ProdutosRepository {
   async criar(produto) {
 
     await ProdutosModel.create({
-      nome: produto.dono,
+      nome: produto.nome,
       preco: produto.preco,
     });
   }
@@ -16,7 +16,7 @@ class ProdutosRepository {
     const resultado = await ProdutosModel.findByPk(produtoID);
     if (!resultado) return null;
 
-    return new Produtos(resultado.produto=_id, resultado.nome, resultado.preco);
+    return new Produtos(resultado.produto_id, resultado.nome, resultado.preco);
   }
 
   async obterTodos() {
@@ -33,14 +33,14 @@ class ProdutosRepository {
 
     await ProdutosModel.update(
       { nome: produto.obterNome(), preco: produto.obterPreco() },
-      { where: { produto_id: produto.produtoID } }
+      { where: { produto_id: produto.produto_id } }
     );
   }
 
   async remover(produto) {
 
     await ProdutosModel.destroy({
-        where: { produto_id: produto.produtoID },
+        where: { produto_id: produto.produto_id },
     });
   }
 }

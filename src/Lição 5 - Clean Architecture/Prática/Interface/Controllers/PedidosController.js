@@ -1,4 +1,5 @@
 import PedidosRepository from '../../Infrastructure/Repositories/PedidosRepository.js';
+import ProdutosRepository from '../../Infrastructure/Repositories/ProdutosRepository.js';
 
 import CriarPedido from '../../Application/Use-Cases/Pedidos/criarPedido.js';
 import PegarPedido from '../../Application/Use-Cases/Pedidos/pegarPedido.js';
@@ -6,8 +7,9 @@ import PegarTodosPedidos from '../../Application/Use-Cases/Pedidos/pegarTodosPed
 import RemoverPedido from '../../Application/Use-Cases/Pedidos/removerPedido.js';
 
 const pedidosRepository = new PedidosRepository();
+const produtosRepository = new ProdutosRepository();
 
-const criarPedidoApp = new CriarPedido(pedidosRepository);
+const criarPedidoApp = new CriarPedido(pedidosRepository, produtosRepository);
 const pegarPedidoApp = new PegarPedido(pedidosRepository);
 const pegarTodosPedidosApp = new PegarTodosPedidos(pedidosRepository);
 const removerPedidoApp = new RemoverPedido(pedidosRepository);
